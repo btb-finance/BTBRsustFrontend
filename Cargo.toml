@@ -2,7 +2,7 @@
 name = "trunk-template"
 version = "0.1.0"
 edition = "2021"
-description = "Template for starting a Yew project using Trunk"
+description = "BTB Rust Frontend"
 readme = "README.md"
 repository = "https://github.com/yewstack/yew-trunk-minimal-template"
 license = "MIT OR Apache-2.0"
@@ -13,8 +13,9 @@ categories = ["gui", "wasm", "web-programming"]
 [dependencies]
 yew = { version="0.20", features=["csr"] }
 yew-router = "0.17.0"
-web-sys = "0.3.64"
-wasm-bindgen = "0.2.87"
+wasm-bindgen = "0.2.99"
+web-sys = { version = "0.3.64", features = ["Window", "Document", "Element", "HtmlElement"] }
+js-sys = "0.3.64"
 log = "0.4.19"
 wasm-logger = "0.2.0"
 console_error_panic_hook = "0.1.7"

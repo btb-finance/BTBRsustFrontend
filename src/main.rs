@@ -18,3 +18,5 @@ fn app() -> Html {
 pub fn run_app() {
     yew::Renderer::<App>::new().render();
 }
+
+fn main() {}
