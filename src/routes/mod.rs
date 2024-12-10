@@ -4,18 +4,18 @@ use yew_router::prelude::*;
 use crate::pages::calculator::Calculator;
 use crate::pages::pool::Pool;
 
-#[derive(Switch, Debug, Clone)]
+#[derive(Clone, Routable, PartialEq)]
 pub enum AppRoute {
-    #[to = "/calculator"]
+    #[at("/calculator")]
     Calculator,
-    #[to = "/pool"]
+    #[at("/pool")]
     Pool,
-    #[to = "/"]
+    #[at("/")]
     Home,
 }
 
-pub fn switch(routes: &AppRoute) -> Html {
-    match routes {
+pub fn switch(route: AppRoute) -> Html {
+    match route {
         AppRoute::Calculator => html! { <Calculator /> },
         AppRoute::Pool => html! { <Pool /> },
         AppRoute::Home => html! { <div>{ "Home" }</div> },

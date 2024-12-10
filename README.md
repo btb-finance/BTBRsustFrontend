@@ -1,78 +1,40 @@
-<<<<<<< HEAD
-# BTBRsustFrontendV1
-=======
-# Yew Trunk Template
+# BTB Rust Frontend
 
-This is a fairly minimal template for a Yew app that's built with [Trunk].
+A Rust-based web application using Yew framework.
 
-## Usage
+## Prerequisites
 
-For a more thorough explanation of Trunk and its features, please head over to the [repository][trunk].
+- Rust (stable version)
+- WebAssembly target: `rustup target add wasm32-unknown-unknown`
+- basic-http-server: `cargo install basic-http-server`
 
-### Installation
+## Building the Project
 
-If you don't already have it installed, it's time to install Rust: <https://www.rust-lang.org/tools/install>.
-The rest of this guide assumes a typical Rust installation which contains both `rustup` and Cargo.
+1. Clone the repository
+2. Run the build script:
+   ```bash
+   chmod +x build.sh
+   ./build.sh
+   ```
 
-To compile Rust to WASM, we need to have the `wasm32-unknown-unknown` target installed.
-If you don't already have it, install it with the following command:
+## Running the Application
 
-```bash
-rustup target add wasm32-unknown-unknown
-```
+1. Start the server:
+   ```bash
+   basic-http-server -a 127.0.0.1:8081 dist
+   ```
+2. Open your web browser and navigate to: `http://127.0.0.1:8081`
 
-Now that we have our basics covered, it's time to install the star of the show: [Trunk].
-Simply run the following command to install it:
+## Project Structure
 
-```bash
-cargo install trunk wasm-bindgen-cli
-```
+- `src/main.rs`: Main application entry point
+- `src/routes/`: Application routing
+- `src/pages/`: Page components
+- `src/components/`: Reusable components
 
-That's it, we're done!
+## Development
 
-### Running
-
-```bash
-trunk serve
-```
-
-Rebuilds the app whenever a change is detected and runs a local server to host it.
-
-There's also the `trunk watch` command which does the same thing but without hosting it.
-
-### Release
-
-```bash
-trunk build --release
-```
-
-This builds the app in release mode similar to `cargo build --release`.
-You can also pass the `--release` flag to `trunk serve` if you need to get every last drop of performance.
-
-Unless overwritten, the output will be located in the `dist` directory.
-
-## Using this template
-
-There are a few things you have to adjust when adopting this template.
-
-### Remove example code
-
-The code in [src/main.rs](src/main.rs) specific to the example is limited to only the `view` method.
-There is, however, a fair bit of Sass in [index.scss](index.scss) you can remove.
-
-### Update metadata
-
-Update the `name`, `version`, `description` and `repository` fields in the [Cargo.toml](Cargo.toml) file.
-The [index.html](index.html) file also contains a `<title>` tag that needs updating.
-
-Finally, you should update this very `README` file to be about your app.
-
-### License
-
-The template ships with both the Apache and MIT license.
-If you don't want to have your app dual licensed, just remove one (or both) of the files and update the `license` field in `Cargo.toml`.
-
-There are two empty spaces in the MIT license you need to fill out: `` and `root`.
-
-[trunk]: https://github.com/thedodd/trunk
->>>>>>> 5dfee17 (rust frontend)
+To make changes to the application:
+1. Edit the source files
+2. Run `./build.sh` to rebuild
+3. Refresh your browser to see the changes

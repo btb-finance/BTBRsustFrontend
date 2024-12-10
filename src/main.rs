@@ -1,5 +1,5 @@
+use wasm_bindgen::prelude::*;
 use yew::prelude::*;
-use yew_router::prelude::*;
 
 mod components;
 mod pages;
@@ -8,12 +8,13 @@ mod routes;
 #[function_component(App)]
 fn app() -> Html {
     html! {
-        <BrowserRouter>
-            <Switch<routes::AppRoute> render={routes::switch} />
-        </BrowserRouter>
+        <div>
+            <h1>{ "Hello World!" }</h1>
+        </div>
     }
 }
 
-fn main() {
+#[wasm_bindgen(start)]
+pub fn run_app() {
     yew::Renderer::<App>::new().render();
 }

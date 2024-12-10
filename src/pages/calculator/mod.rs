@@ -3,9 +3,13 @@ use yew::prelude::*;
 #[function_component(Calculator)]
 pub fn calculator() -> Html {
     html! {
-        <div>
+        <div class="calculator-page">
             <h1>{ "Calculator Page" }</h1>
-            { /* Your calculator component implementation */ }
+            <div class="calculator">
+                <div class="display">
+                    <input type="text" readonly=true value="" />
+                </div>
+            </div>
         </div>
     }
 }
